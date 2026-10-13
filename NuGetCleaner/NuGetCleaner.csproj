@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
 
     <PackAsTool>true</PackAsTool>
     <PackageOutputPath>./nupkg</PackageOutputPath>
 	  
 	<!-- Package metadata -->
 	<ToolCommandName>NuGetCleaner</ToolCommandName>
-	<Version>1.1.2</Version>
+	<Version>1.1.5</Version>
     <Authors>Chris Gill</Authors>
     <Description>Cleans up Global Package Folder by deleting directories unaccessed for a time greater than a specified threshold.</Description>
     <PackageProjectUrl>https://github.com/chgill-MSFT/NuGetCleaner</PackageProjectUrl>
@@ -20,6 +20,7 @@
 	<ReleaseNotes>Added an embedded README!!!</ReleaseNotes>
 	<Copyright>Copyright (c) Chris Gill 2021</Copyright>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,8 +36,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.6.0" />
-    <PackageReference Include="NuGet.Configuration" Version="5.2.0" />
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="NuGet.Configuration" Version="7.9.0" />
+    <PackageReference Include="NuGet.Versioning" Version="7.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="NuGetCleaner.Tests" />
   </ItemGroup>
 
 </Project>
